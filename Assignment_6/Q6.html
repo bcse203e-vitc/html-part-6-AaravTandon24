@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ctof(){
+        let n = parseFloat(prompt('Enter the variable: '));
+        let far = (n * 1.8) + 32;
+        document.getElementById("answer").innerText =`Fahrenheit = ${far}`;
+    }
+    </script>
+</head>
+<body>
+    <button onclick="ctof()">
+       Start
+    </button>
+    <p id="answer"></p>
+    
+</body>
+</html>
