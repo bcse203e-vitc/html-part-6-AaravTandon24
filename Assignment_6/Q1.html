@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function swap(){
+        let a = parseFloat(prompt('Enter the first variable: '));
+        let b = parseFloat(prompt('Enter the second variable: '));
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        document.getElementById("answer").innerText = `After swapping:\nFirst variable = ${a} \nSecond variable = ${b}`;
+        };
+    </script>
+</head>
+<body>
+    <button onclick="swap()">
+       Swap
+    </button>
+    <p id="answer"></p>
+    
+</body>
+</html>
