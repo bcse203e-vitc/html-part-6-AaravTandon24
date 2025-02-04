@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function oddeven(){
+        let n = parseFloat(prompt('Enter the variable: '));
+        let og = n;
+        let rev = 0;
+        let a;
+        while (n!=0){
+        a = n % 10;
+        rev = a + rev * 10;
+        n = Math.floor(n/10);
+        }
+        document.getElementById("reverse").innerText =  `Reverse Number: ${rev}`;    
+        if (rev == og){
+            document.getElementById("answer").innerText =  "Number is a palindrome";
+        }
+        else{
+            document.getElementById("answer").innerText =  "Number is not a palindrome";
+        }
+        
+        };
+    </script>
+</head>
+<body>
+    <button onclick="oddeven()">
+       Start
+    </button>
+    <p id="reverse"></p>
+    <p id="answer"></p>
+    
+</body>
+</html>
