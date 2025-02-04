@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <script>
+      function fibonacci(n) {
+        if (n <= 0) return [];
+        if (n === 1) return [0];
+        if (n === 2) return [0, 1];
+        const fibSeries = fibonacci(n - 1);
+        fibSeries.push(
+          fibSeries[fibSeries.length - 1] + fibSeries[fibSeries.length - 2]
+        );
+        return fibSeries;
+      }
+
+      const input = prompt(
+        "Enter the value of N (number of Fibonacci numbers to generate):"
+      );
+      const n = parseInt(input);
+
+      if (isNaN(n) || n < 1) {
+        alert("Please enter a valid positive number!");
+      } else {
+        const result = fibonacci(n);
+        alert(`Fibonacci Series: ${result.join(", ")}`);
+      }
+    </script>
+  </body>
+</html>

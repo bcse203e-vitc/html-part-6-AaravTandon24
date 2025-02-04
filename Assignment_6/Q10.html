@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find LCM</title>
+  </head>
+  <body>
+    <h1>Find LCM</h1>
+    <button onclick="findLCM()">Find LCM</button>
+    <div id="output"></div>
+
+    <script>
+      function gcd(a, b) {
+        if (b === 0) return a;
+        return gcd(b, a % b);
+      }
+
+      function lcm(a, b) {
+        return Math.abs(a * b) / gcd(a, b);
+      }
+
+      function findLCM() {
+        const num1 = parseInt(prompt("Enter the first number:"));
+        const num2 = parseInt(prompt("Enter the second number:"));
+
+        if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+          document.getElementById("output").textContent =
+            "Please enter valid positive numbers!";
+          return;
+        }
+
+        const result = lcm(num1, num2);
+        document.getElementById(
+          "output"
+        ).textContent = `LCM of ${num1} and ${num2} is ${result}`;
+      }
+    </script>
+  </body>
+</html>

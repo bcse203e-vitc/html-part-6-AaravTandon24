@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Fibonacci Series</title>
+  </head>
+  <body>
+    <h1>Generate Fibonacci Series</h1>
+    <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+    <div id="output"></div>
+
+    <script>
+      function fibonacciRecursive(n) {
+        if (n <= 1) return n;
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+      }
+
+      function generateFibonacci() {
+        const input = prompt("Enter N (number of terms):");
+        const n = parseInt(input);
+        if (isNaN(n) || n <= 0) {
+          document.getElementById("output").textContent =
+            "Please enter a valid positive number!";
+          return;
+        }
+
+        const series = [];
+        for (let i = 0; i < n; i++) {
+          series.push(fibonacciRecursive(i));
+        }
+
+        document.getElementById(
+          "output"
+        ).textContent = `Fibonacci Series: ${series.join(", ")}`;
+      }
+    </script>
+  </body>
+</html>
