@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function greatest(){
+        let a = parseFloat(prompt('Enter the first variable: '));
+        let b = parseFloat(prompt('Enter the second variable: '));
+        let c = parseFloat(prompt("Enter third number: "));
+        let result;
+        if (a > b && a > c){
+            result = a;
+        }
+        else if (b > a && b > c){
+            result = b;
+        }
+        else{
+            result = c;
+        }
+        document.getElementById("answer").innerText = `Greates number : ${result}`;
+        };
+    </script>
+</head>
+<body>
+    <button onclick="greatest()">
+       Start
+    </button>
+    <p id="answer"></p>
+    
+</body>
+</html>
